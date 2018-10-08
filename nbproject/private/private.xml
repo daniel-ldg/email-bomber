@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/daniel/Documents/NetBeansProjects/emailbomber/src/emailbomber/network/HttpClient.java</file>
-            <file>file:/Users/daniel/Documents/NetBeansProjects/emailbomber/src/emailbomber/bomber/Email.java</file>
-            <file>file:/Users/daniel/Documents/NetBeansProjects/emailbomber/src/gui/Ventana.java</file>
-            <file>file:/Users/daniel/Documents/NetBeansProjects/emailbomber/src/emailbomber/bomber/BomberThread.java</file>
+            <file>file:/Users/daniel/Documents/NetBeansProjects/emailbomber/src/emailbomber/gui/ServidorRemoto.java</file>
+            <file>file:/Users/daniel/Documents/NetBeansProjects/emailbomber/src/emailbomber/network/ApiEstadoCliente.java</file>
+            <file>file:/Users/daniel/Documents/NetBeansProjects/emailbomber/src/emailbomber/gui/ServidoresRemotos.java</file>
+            <file>file:/Users/daniel/Documents/NetBeansProjects/emailbomber/src/emailbomber/gui/Ventana.java</file>
+            <file>file:/Users/daniel/Documents/NetBeansProjects/emailbomber/src/emailbomber/gui/JLabelEstadoConexion.java</file>
         </group>
     </open-files>
 </project-private>

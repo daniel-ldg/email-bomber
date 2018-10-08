@@ -10,8 +10,8 @@ class BomberThread extends Thread {
 
     private String urlServidor;
     private int numPeticiones;
-    private int avance;
-    private int errores;
+    private int peticionesHechas;
+    private int peticionesRechazadas;
     private boolean cancelar;
     private Email emailBomb;
     private ObjectMapper mapper;
@@ -20,8 +20,8 @@ class BomberThread extends Thread {
         this.urlServidor = urlServidor;
         this.emailBomb = emailBomb;
         this.numPeticiones = numPeticiones;
-        this.avance = 0;
-        this.errores = 0;
+        this.peticionesHechas = 0;
+        this.peticionesRechazadas = 0;
         this.cancelar = false;
         this.mapper = new ObjectMapper();
     }
@@ -34,26 +34,26 @@ class BomberThread extends Thread {
         return numPeticiones;
     }
 
-    public int getAvance() {
-        return avance;
+    public int getPeticionesHechas() {
+        return peticionesHechas;
     }
 
-    public int getErrores() {
-        return errores;
+    public int getPeticionesRechazadas() {
+        return peticionesRechazadas;
     }
     
     public void cancelar() {
         this.cancelar = true;
     }
     
-    public boolean isTerminado() {
-        return avance == numPeticiones || cancelar;
+    public boolean ataqueTerminado() {
+        return peticionesHechas == numPeticiones || cancelar;
         
     }
 
     @Override
     public void run() {
-        while (!isTerminado()) {
+        while (!ataqueTerminado()) {
             try {
                 String jsonPeticion = this.mapper.writeValueAsString(this.emailBomb);
                 
@@ -65,9 +65,9 @@ class BomberThread extends Thread {
                     ex.printStackTrace();
                 }
             } catch (IOException | HttpException e) {
-                this.errores++;
+                this.peticionesRechazadas++;
             } finally {
-                this.avance++;
+                this.peticionesHechas++;
             }
         }
     }
